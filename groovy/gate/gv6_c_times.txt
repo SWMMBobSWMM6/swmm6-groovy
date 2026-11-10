@@ -1,0 +1,5 @@
+queued 2026-11-09T20:47:25-05:00
+lost 2026-11-09T21:01:45-05:00: the container restarted at about 21:00 while this run waited for the lock; run again
+queued 2026-11-09T21:02:29-05:00
+started 2026-11-09T21:16:29-05:00
+ended 2026-11-09T21:29:19-05:00 rc=0

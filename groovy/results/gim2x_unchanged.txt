@@ -1,0 +1,16 @@
+# tools/libm/gim2x.py: the Kotlin and Groovy back ends were added without changing the Go, Java and TypeScript output.
+# The six set-1 and set-2 files regenerated from the same GIMPLE dumps and tables with the gim2x.py of commit 91238e6 (old) and with this one (new), 2026-11-09:
+glibm.go: identical (5376 lines, md5 fa30ec1c5a5d0b8e9d7db8f2c813a0ea)
+glibm2.go: identical (3090 lines, md5 f48444ceade7e4dfba7264e1a57e19d8)
+Glibm.java: identical (4943 lines, md5 3a3d39b73c60df823b43287768f5bc04)
+Glibm2.java: identical (2727 lines, md5 6cd813ccf717e15e23493b966f23794c)
+glibm.ts: identical (5011 lines, md5 d9181912a51fd3c5d963abc792b7982b)
+glibm2.ts: identical (2726 lines, md5 23ca9469bb606418d5ffe887d0ab0741)
+# and against the files committed in the repository (go/, java/src/cpp/, ts/): the set-1 files were made with other --header lines
+/home/claude/swmm6-ports/go/glibm/glibm2.go vs new glibm2.go: 0 differing lines outside // comments
+/home/claude/swmm6-ports/java/src/cpp/Glibm2.java vs new Glibm2.java: 0 differing lines outside // comments
+/home/claude/swmm6-ports/ts/src/cpp/libm/glibm2.ts vs new glibm2.ts: 0 differing lines outside // comments
+/home/claude/swmm6-ports/go/glibm/glibm.go vs new glibm.go: 0 differing lines outside // comments
+/home/claude/swmm6-ports/java/src/cpp/Glibm.java vs new Glibm.java: 0 differing lines outside // comments
+/home/claude/swmm6-ports/ts/src/cpp/libm/glibm.ts vs new glibm.ts: 2 differing lines outside // comments
+#   (glibm.ts: the two lines are the import, "./glibm_rt" here and "./glibm_rt.js" in the repository: the --rt argument of this check, not gim2x.py; old and new agree)

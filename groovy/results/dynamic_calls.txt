@@ -1,0 +1,59 @@
+== engine and runtime classes: 4278
+ 12816 ScriptBytecodeAdapter.castToType                   e.g. engine.AquiferStore public void __CopyFrom_AquiferStore(engine.AquiferStore)
+  1383 ScriptBytecodeAdapter.compareIdentical             e.g. engine.AquiferStore public void Assign(engine.AquiferStore)
+   252 ScriptBytecodeAdapter.compareNotIdentical          e.g. cpp.Box<T> public cpp.RefO<T> ref_V()
+   241 ScriptBytecodeAdapter.setGroovyObjectProperty      e.g. cpp.Algo public static <T> cpp.Vec<T> VecFrom(cpp.Iter<T>, cpp.Iter<T>)
+    75 DefaultTypeTransformation.intUnbox                 e.g. engine.F_fv public static engine.Lfv_MeshBuildReport buildNetworkMesh(engine.SimulationContext, engine.Lfv_FvOpt
+    63 DefaultTypeTransformation.doubleUnbox              e.g. engine.DefaultReportPlugin public int write_summary(engine.SimulationContext)
+    41 ScriptBytecodeAdapter.isCase                       e.g. cpp.ErrorCode public cpp.Str message()
+    35 DefaultTypeTransformation.booleanUnbox             e.g. engine.F_input public static void resolve_cross_references(engine.SimulationContext)
+    14 DefaultTypeTransformation.longUnbox                e.g. engine.Lcontrols_ControlEngine public void buildPremiseSoA()
+     9 ShortTypeHandling.castToString                     e.g. cpp.FsNet$FileOut long seek(long, int)
+     5 DefaultTypeTransformation.shortUnbox               e.g. engine.F_input public static void handle_xsections(engine.SimulationContext, cpp.Vec<cpp.Str>)
+     5 DefaultTypeTransformation.byteUnbox                e.g. cpp.Algo public static cpp.IterB transform_Iteruc_Iteruc_Iteruc_Funcucc(cpp.IterB, cpp.IterB, cpp.IterB, cpp.
+     4 DefaultTypeTransformation.floatUnbox               e.g. cpp.Arr public static float[] MakeWith__F(int, cpp.Fn$F0<java.lang.Float>)
+     3 DefaultTypeTransformation.charUnbox                e.g. cpp.Arr public static char[] MakeWith__C(int, cpp.Fn$F0<java.lang.Character>)
+     3 ScriptBytecodeAdapter.compareEqual                 e.g. cpp.AtomicZ private static boolean eq(boolean, boolean)
+     3 ScriptBytecodeAdapter.getField                     e.g. cpp.FsNet$FileOut long seek(long, int)
+     2 InvokerHelper.invokeStaticMethod                   e.g. cpp.HashTable$_closure1 public java.lang.Long doCall(K)
+
+   108 engine.SimulationSnapshot.__CopyFrom_SimulationSnapshot
+   107 engine.SubcatchData.__CopyFrom_SubcatchData
+   105 engine.Lfv_ExplicitFvSolver.__CopyFrom_ExplicitFvSolver
+   104 engine.SimulationSnapshot.__init_mSimulationSnapshot
+   100 engine.F_input.resolve_cross_references
+    97 engine.SimulationContext.__CopyFrom_SimulationContext
+    96 engine.Ldynwave_DWSolver.__CopyFrom_DWSolver
+    93 engine.Ldynwave_DWSolver.__init_mDWSolver
+    92 engine.SubcatchData.reserve_to
+    91 engine.Llid_LIDGroupSoA.__init_mLIDGroupSoA
+    91 engine.Llid_LIDGroupSoA.__CopyFrom_LIDGroupSoA
+    89 engine.SubcatchData.grow_to
+    87 engine.NodeData.__CopyFrom_NodeData
+    85 engine.LinkData.__CopyFrom_LinkData
+    81 engine.F_transport__anon_transport_components_HeatModule_HeatComponent_cpp.applyHeatSections_HeatComponent
+    77 engine.LinkData.grow_to
+    76 engine.LinkData.reserve_to
+    72 engine.NodeData.reserve_to
+    67 engine.NodeData.grow_to
+    60 engine.Lfv_NetworkMeshData.__CopyFrom_NetworkMeshData
+    59 engine.Lcontrols_ControlEngine.parseRuleText
+    52 engine.SWMMEngine.__CopyFrom_SWMMEngine
+    51 engine.F_transport.serializeReactionSystem
+    50 engine.Linlet_InletSoA.__CopyFrom_InletSoA
+    50 engine.LtwoD_SubsurfaceState.__CopyFrom_SubsurfaceState
+    46 engine.ReactionData.__CopyFrom_ReactionData
+    44 engine.LtwoD_SubsurfaceTransportState.__CopyFrom_SubsurfaceTransportState
+    43 engine.ForcingData.__init_mForcingData
+    43 engine.ForcingData.__CopyFrom_ForcingData
+    43 engine.Llid_LIDSolver.init
+    42 engine.F_richards.advance
+    40 engine.LtwoD_MeshData.__CopyFrom_MeshData
+    39 engine.DefaultReportPlugin.write_results
+    39 engine.Lquality_FvQualityTransport.execute
+    39 engine.Ltransport_ArdEngine.__CopyFrom_ArdEngine
+    37 engine.Lfv_PressurizedHeadSolver.__CopyFrom_PressurizedHeadSolver
+    36 engine.F_transport__anon_transport_components_EulerianArdComponent_ArdConfig_cpp.applyArdSections_ArdConfig
+    36 engine.MsxSurfaceData.__CopyFrom_MsxSurfaceData
+    35 engine.MsxSurfaceData.__init_mMsxSurfaceData
+    34 engine.SWMMEngine_RestartState.__CopyFrom_RestartState

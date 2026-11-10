@@ -1,0 +1,14 @@
+== clean copy of 96dcd17 in /dev/shm/gv6_v
+== the translator: tools/cs2x/build_groovy.sh
+GvFn.cs(63,19): warning CS0414: The field 'Cs2Groovy.GvFn.inLambda' is assigned but its value is never used
+== the engine, regenerated from cs/gen into /dev/shm/gv6_v/regen and compared with groovy/gen/engine
+wrote 1259 files, 0 TODO kinds, 0 TODO sites
+engine: 1259 files, byte-identical to the commit
+== the runtime, translated again from java/src/cpp with J2Gv and compared with groovy/src/cpp
+J2Gv: wrote 181 files
+runtime: 186 files, byte-identical to the commit
+== build
+groovyc: 1446 files
+built bin/openswmm.jar (8.4M)
+-rw-r--r-- 1 root root 8774202 Nov  9 21:47 groovy/bin/openswmm.jar
+rc=0

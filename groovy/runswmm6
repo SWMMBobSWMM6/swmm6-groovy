@@ -1,0 +1,15 @@
+#!/bin/bash
+# runswmm6 - run the Groovy SWMM6 engine: runswmm6 <input.inp> <report.rpt> [output.out]
+# The classes are Groovy compiled with @CompileStatic; at run time they need groovy-3.0.24.jar (GROOVY_LIB, default
+# /opt/gradle/lib, where Gradle keeps it). As the Java and Kotlin ports' launchers: a 3 GB heap holds the biggest
+# models; the engine runs on a thread with a 256 MB stack (src/main/Main.groovy); the serial collector keeps a run to
+# one core. -XX:-DontCompileHugeMethods lets HotSpot compile methods over 8,000 bytes of bytecode, which Groovy's
+# translations of pow, acos, asin and tan and of the larger engine methods are (SWMM5 lessons/38: without it they stay
+# in the interpreter; it changes what is compiled, not what is computed). JAVA_TOOL_OPTIONS (set in this environment
+# for a network proxy the engine does not use) is dropped so that the JVM does not announce it on stderr, which the
+# gate reads. SWMM6_GV_OPTS adds JVM options. Written by Claude (Anthropic) for Robert Dickinson's SWMM6 ports; see README.md.
+D="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
+L=${GROOVY_LIB:-/opt/gradle/lib}
+GJ=$(ls "$L"/groovy-3.*.jar | grep -E '/groovy-3\.[0-9.]+\.jar$' | sort -V | tail -1)
+unset JAVA_TOOL_OPTIONS
+exec java -Xmx3g -XX:+UseSerialGC -XX:-UsePerfData -XX:-DontCompileHugeMethods $SWMM6_GV_OPTS -cp "$D/bin/openswmm.jar:$GJ" Main "$@"
