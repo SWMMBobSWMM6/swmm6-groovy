@@ -18,21 +18,18 @@ the input files in the upstream repository's `tests` folder at 88329d6, and the 
 structure coupling, the newer hydrology and the input checks. Gate runs
 `gv6_x_a`, `gv6_x_b`, `gv6_x_c`, in `gate/evidence/` with the same hashes.
 
-Checked twice more. An independent rerun of the 480 from a clean copy of the repository (`git archive`), with the
-translator rebuilt there, the engine regenerated from `cs/gen` and the runtime from `java/src/cpp` (both
-byte-identical to the committed files) and the jar built there: gate runs
+Checked twice more. An independent rerun of the 480 from a clean copy of the repository (`git archive`), with
+the translator rebuilt there, the engine regenerated from `cs/gen` and the runtime from `java/src/cpp` (both byte-identical to the committed files) and the jar built there: gate runs
 `gv6_v_a`, `gv6_v_b`, `gv6_v_c`, **480 of 480 byte-identical**. Then the main session's own check, from a
-clean `git clone`: the translator rebuilt, the engine and the runtime regenerated (identical again), the jar built
-there, and gate runs `gv6_main` on 45 corpus models drawn at random (seed 20261110) plus the three decks that
+clean `git clone`: the translator rebuilt, the engine and the runtime regenerated (identical again) and the jar built there; and, in a second clean clone, the math regenerated from glibc 2.39's source (compiled to GIMPLE only, nothing of glibc run) with `groovy/make_glibm.sh`: `Glibm.groovy` and `Glibm2.groovy` identical to the committed files; and gate runs `gv6_main` on 45 corpus models drawn at random (seed 20261110) plus the three decks that
 SAVE and USE `cho.txt` (**48 of 48 byte-identical**) and `gv6_main_x` on 12 extra decks drawn the same way
-(**12 of 12 byte-identical**). Neither check regenerated the math (the GIMPLE dumps it is made from were no longer on
-the machine); its own tests are in `groovy/results/libm_tests.txt`.
+(**12 of 12 byte-identical**). The math's own tests are in `groovy/results/libm_tests.txt`.
 
 A model passes when its `.out` is byte-identical to the reference's (when the reference writes one), its `.rpt` is
 identical after removing the lines "Analysis begun", "Analysis ended" and "Total elapsed time", and its exit code is
 the same (the command line exits nonzero when a model stops on an input error).
 
-The translations, all from the same C# and gated the same way: swmm6-csharp, swmm6-go, swmm6-java, swmm6-typescript, swmm6-fortran, swmm6-python, swmm6-kotlin, swmm6-groovy, under
+The translations, all from the same C# and gated the same way: swmm6-csharp, swmm6-go, swmm6-java, swmm6-typescript, swmm6-fortran, swmm6-python, swmm6-kotlin, swmm6-groovy, swmm6-javascript, under
 [SWMMBobSWMM6](https://github.com/SWMMBobSWMM6).
 
 ## How it was made

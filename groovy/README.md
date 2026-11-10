@@ -31,8 +31,11 @@ translator was rebuilt, the engine regenerated from `cs/gen` and the runtime fro
 (`random.Random(20261110)`) plus `Hydrology/save_rtk_long.inp`, `one_sub_one_rdii_node.inp` and
 `Use_SeasonalRDIIn.inp`, the decks that SAVE and USE `cho.txt` (48 of 48; 696 s), and run `gv6_main_x` on 12 extra
 decks drawn the same way (12 of 12; 119 s). Ids in `gate/ids_main_check.txt` and `gate/ids_main_check_extra.txt`.
-Neither this check nor the rerun regenerated the math: the GIMPLE dumps `make_glibm.sh` reads were no longer on the
-machine; its tests are in `results/libm_tests.txt`. `Hydrology/cho.txt` was unchanged afterwards.
+Neither this check nor the rerun regenerated the math at first (the GIMPLE dumps `make_glibm.sh` reads were no
+longer on the machine). The main session did that later the same day, in a second clean clone (commit 296062e):
+glibc 2.39's source compiled to GIMPLE again with `tools/libm/build_glibm.sh` (compiled only; nothing of glibc is
+run), its tables read with `extract_tables.py`, then `groovy/make_glibm.sh`: `Glibm.groovy` and `Glibm2.groovy` byte-identical to the
+committed files. The math's own tests are in `results/libm_tests.txt`. `Hydrology/cho.txt` was unchanged afterwards.
 
 Every result, with the SHA-256 of each `.out` and `.rpt`, is in `results/NAME.json`, with the run's log beside it.
 
